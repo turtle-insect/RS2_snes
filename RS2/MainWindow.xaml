@@ -1,0 +1,164 @@
+﻿<Window x:Class="RS2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RS2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen"
+        AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver">
+    <Window.DataContext>
+        <local:DataContext/>
+    </Window.DataContext>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="(_O)pen..." Click="MenuItemFileOpen_Click"/>
+                    <MenuItem Header="(_S)ave" Click="MenuItemFileSave_Click"/>
+                    <MenuItem Header="Save(_A)s..." Click="MenuItemFileSaveAs_Click"/>
+                    <Separator/>
+                    <MenuItem Header="(_E)xit" Click="MenuItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="(_A)bout" Click="MenuItemAbout_Click"/>
+            </Menu>
+            <TabControl>
+                <TabItem Header="Charactor">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ListBox Name="ListBoxParty" ItemsSource="{Binding Party}"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="ID"/>
+                            <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="1" Content="Graphic"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.HP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="2" Content="Sex"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Graphic, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="3" Content="HP"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Sex, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="4" Content="Auto"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Auto, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="5" Content="HP"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.HP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="6" Content="LP"/>
+                            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.LP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="7" Content="MaxLP"/>
+                            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.MaxLP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="8" Content="JP"/>
+                            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.JP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="9" Content="MaxJP"/>
+                            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.MaxJP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="10" Content="WP"/>
+                            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.WP, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Label Grid.Row="11" Content="MaxWP"/>
+                            <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.MaxWP, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Grid>
+                        <TabControl Grid.Column="2">
+                            <TabItem Header="Technology Lv">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition Height="10*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Sword"/>
+                                    <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Sword, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Row="1" Content="Spear"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Spear, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Row="2" Content="Ax"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Ax, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Row="3" Content="Bow"/>
+                                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Bow, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <Label Grid.Row="4" Content="Magic"/>
+                                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=ListBoxParty, Path=SelectedItem.Magic, UpdateSourceTrigger=PropertyChanged}"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem Header="Equipment">
+                                <ListBox ItemsSource="{Binding ElementName=ListBoxParty, Path=SelectedItem.Equipments}">
+                                    <ListBox.Resources>
+                                        <local:EquipmentConverter x:Key="EquipmentConverter"/>
+                                    </ListBox.Resources>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="..." Click="ButtonEquipment_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource EquipmentConverter}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </TabItem>
+                            <TabItem Header="SKill">
+                                <ListBox ItemsSource="{Binding ElementName=ListBoxParty, Path=SelectedItem.Skills}">
+                                    <ListBox.Resources>
+                                        <local:SkillConverter x:Key="SkillConverter"/>
+                                    </ListBox.Resources>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox VerticalAlignment="Center" IsChecked="{Binding Vacate}"/>
+                                                <Button Content="..." Click="ButtonSkill_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource SkillConverter}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </TabItem>
+                            <TabItem Header="Art">
+                                <ListBox ItemsSource="{Binding ElementName=ListBoxParty, Path=SelectedItem.Arts}">
+                                    <ListBox.Resources>
+                                        <local:ArtConverter x:Key="ArtConverter"/>
+                                    </ListBox.Resources>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Content="..." Click="ButtonArt_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource ArtConverter}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
