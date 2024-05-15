@@ -8,7 +8,7 @@ https://www.jp.square-enix.com/game/detail/romancingsaga2/
 
 # 実行に必要
 * Windows マシン
-* .NET Framework 4.7.2
+* .NET Framework 4.8
 * セーブデータの吸い出し
 * セーブデータの書き戻し
 
